@@ -7,10 +7,10 @@ data:
   init.sql: |
     CREATE TABLE IF NOT EXISTS servers (
         id SERIAL PRIMARY KEY,
-        hostname VARCHAR(255) UNIQUE NOT NULL,
+        hostname VARCHAR(100) UNIQUE NOT NULL,
         ip_address VARCHAR(45),
         os VARCHAR(100),
-        status VARCHAR(50)
+        status VARCHAR(20)
     );
 
     INSERT INTO servers (hostname, ip_address, os, status)

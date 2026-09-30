@@ -9,7 +9,7 @@ NetApp NFS 기반 PersistentVolume을 사용합니다.
 
 - `secret.example.yaml` - PostgreSQL 인증정보 템플릿
 - `configmap.yaml` - 데이터베이스 초기화 SQL
-- `pv.yaml` - NetApp NFS PersistentVolume
+- `postgres-pv.yaml` - NetApp NFS PersistentVolume
 - `statefulset.yaml` - PostgreSQL StatefulSet
 - `service.yaml` - PostgreSQL ClusterIP Service
 
@@ -59,6 +59,10 @@ PostgreSQL 초기 스키마 및 테스트 데이터는 `init.sql`에서 관리�
       --dry-run=client \
       -o yaml | kubectl apply -f -
 ```
+init.sql은 PostgreSQL 초기화 SQL의 원본이며,
+동일한 초기화 SQL을 postgres-init ConfigMap으로 구성하여
+StatefulSet에 마운트합니다.
+
 생성된 ConfigMap은 PostgreSQL StatefulSet에서
 `/docker-entrypoint-initdb.d/init.sql`로 마운트됩니다.
 
@@ -67,7 +71,7 @@ PostgreSQL 데이터 디렉터리가 처음 초기화될 때 해당 SQL이 실�
 ## Deploy
 ```shell
     kubectl apply -f configmap.yaml
-    kubectl apply -f pv.yaml
+    kubectl apply -f postgres-pv.yaml
     kubectl apply -f statefulset.yaml
     kubectl apply -f service.yaml
 ```
