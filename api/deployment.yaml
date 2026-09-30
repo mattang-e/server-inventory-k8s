@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-inventory-api
+  namespace: server-inventory
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: server-inventory-api
+
+  template:
+    metadata:
+      labels:
+        app: server-inventory-api
+
+    spec:
+      imagePullSecrets:
+        - name: harbor-secret
+
+      containers:
+        - name: api
+          image: harbor.lab.local/server-inventory/server-inventory-api:v1
+
+          ports:
+            - containerPort: 8000
+
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: api-config
+                  key: DB_HOST
+
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: api-config
+                  key: DB_NAME
+
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_USER
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
