@@ -112,27 +112,28 @@ MetalLB를 구성했으며, PostgreSQL 데이터는 NetApp NFS Storage에
     │   ├── README.md
     │   └── metallb-config.yaml
     │
-    ├── architecture/
     └── docs/
+        ├── harbor.md
+        └── troubleshooting.yaml
 
 ## Related Repositories
 
 ### Application
 
-`server-inventory-api`
+[server-inventory-api](https://github.com/mattang-e/server-inventory-api)
 
 FastAPI와 PostgreSQL을 사용하는 Server Inventory REST API의
 Application Source 및 Docker Image Build 구성을 관리합니다.
 
 ### Kubernetes Platform
 
-`kubernetes-platform-lab`
+[kubernetes-platform-lab](https://github.com/mattang-e/kubernetes-platform-lab)
 
 Kubernetes HA Cluster, Containerd, Calico 및
 On-Premise Kubernetes Platform 구축 구성을 관리합니다.
 
 ### Kubernetes Deployment
 
-현재 Repository인 `server-inventory-k8s`는
+현재 Repository인 [server-inventory-k8s](https://github.com/mattang-e/server-inventory-k8s) 는
 Server Inventory API를 Kubernetes 환경에 배포하고 운영하기 위한
 Application Infrastructure 구성을 관리합니다.
