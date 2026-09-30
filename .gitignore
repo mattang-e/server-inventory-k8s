@@ -1,0 +1,5 @@
+# Kubernetes secrets
+**/secret.yaml
+
+# macOS
+.DS_Store
