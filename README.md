@@ -98,7 +98,7 @@ MetalLB를 구성했으며, PostgreSQL 데이터는 NetApp NFS Storage에
     │   ├── init.sql
     │   ├── configmap.yaml
     │   ├── secret.example.yaml
-    │   ├── pv.yaml
+    │   ├── postgres-pv.yaml
     │   ├── statefulset.yaml
     │   └── service.yaml
     │
