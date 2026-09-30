@@ -10,7 +10,8 @@ data:
         hostname VARCHAR(100) UNIQUE NOT NULL,
         ip_address VARCHAR(45),
         os VARCHAR(100),
-        status VARCHAR(20)
+        status VARCHAR(20),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 
     INSERT INTO servers (hostname, ip_address, os, status)

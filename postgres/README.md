@@ -57,7 +57,7 @@ PostgreSQL 초기 스키마 및 테스트 데이터는 `init.sql`에서 관리�
       --from-file=init.sql=init.sql \
       -n server-inventory \
       --dry-run=client \
-      -o yaml | kubectl apply -f -
+      -o yaml > configmap.yaml
 ```
 init.sql은 PostgreSQL 초기화 SQL의 원본이며,
 동일한 초기화 SQL을 postgres-init ConfigMap으로 구성하여
