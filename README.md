@@ -114,7 +114,7 @@ MetalLB를 구성했으며, PostgreSQL 데이터는 NetApp NFS Storage에
     │
     └── docs/
         ├── harbor.md
-        └── troubleshooting.yaml
+        └── troubleshooting.md
 
 ## Related Repositories
 
