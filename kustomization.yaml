@@ -8,7 +8,6 @@ resources:
   - api/service.yaml
 
   - postgres/configmap.yaml
-  - postgres/postgres-pv.yaml
   - postgres/service.yaml
   - postgres/statefulset.yaml
 
