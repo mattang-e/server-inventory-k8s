@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: server-inventory-api
   namespace: server-inventory
+  annotations:
+    gitops-test: "auto-sync"
 
 spec:
   replicas: 2
