@@ -22,7 +22,7 @@ spec:
 
       containers:
         - name: api
-          image: harbor.lab.local/server-inventory/server-inventory-api:8
+          image: harbor.lab.local/server-inventory/server-inventory-api:9
 
           ports:
             - containerPort: 8000
