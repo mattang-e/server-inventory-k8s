@@ -13,7 +13,10 @@ Kubernetes `imagePullSecret`을 사용하여 이미지를 Pull합니다.
 
 ## Container Image
 
-    harbor.lab.local/server-inventory/server-inventory-api:v1
+    harbor.lab.local/server-inventory/server-inventory-api:<tag>
+
+현재 CI Pipeline에서는 Jenkins BUILD_NUMBER를 Image Tag로 사용하며,
+Jenkins가 GitOps Repository의 api/deployment.yaml을 자동으로 업데이트합니다.
 
 FastAPI Deployment는 2개의 replica로 구성합니다.
 
