@@ -56,16 +56,17 @@ MetalLB를 구성했으며, PostgreSQL 데이터는 NetApp NFS Storage에
     Container Image Deployment
 
     Application Source
-           |
-           v
-      Docker Build
-           |
-           v
-    Private Harbor Registry
-           |
-           | Image Pull
-           v
-    Kubernetes FastAPI Pods
+       |
+       v
+    Jenkins
+       |
+       | Podman Build / Push
+       v
+Private Harbor Registry
+       |
+       | Image Pull
+       v
+Kubernetes FastAPI Pods
 ```
 ## Tech Stack
 
